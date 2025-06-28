@@ -27,4 +27,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: nirupamagr/node-ci-cd-docker-k8s:latest
+        platforms: linux/amd64,linux/arm64
+        tags: nirupama0123/node-ci-cd-docker-k8s:latest
