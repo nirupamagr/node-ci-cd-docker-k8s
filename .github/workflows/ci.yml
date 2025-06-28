@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: nirupamagr/node-ci-cd-docker-k8s:latest
+        tags: nirupama0123/node-ci-cd-docker-k8s:latest
