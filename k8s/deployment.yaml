@@ -1,0 +1,66 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-06-28T15:24:30Z"
+    generation: 1
+    labels:
+      app: deploy-for-k8s
+    name: deploy-for-k8s
+    namespace: default
+    resourceVersion: "1317"
+    uid: 0d8ee0db-d6a4-48be-9859-fd3f41e59268
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: deploy-for-k8s
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: deploy-for-k8s
+      spec:
+        containers:
+        - image: nnirupama0123/node-ci-cd-docker-k8s:latest
+          imagePullPolicy: Always
+          name: node-ci-cd-docker-k8s
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    conditions:
+    - lastTransitionTime: "2025-06-28T15:24:30Z"
+      lastUpdateTime: "2025-06-28T15:24:30Z"
+      message: Deployment does not have minimum availability.
+      reason: MinimumReplicasUnavailable
+      status: "False"
+      type: Available
+    - lastTransitionTime: "2025-06-28T15:24:30Z"
+      lastUpdateTime: "2025-06-28T15:24:30Z"
+      message: ReplicaSet "deploy-for-k8s-657b87b5cb" is progressing.
+      reason: ReplicaSetUpdated
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    replicas: 1
+    unavailableReplicas: 1
+    updatedReplicas: 1
+kind: List
+metadata:
+  resourceVersion: ""

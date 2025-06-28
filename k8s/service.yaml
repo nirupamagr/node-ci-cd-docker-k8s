@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-06-28T15:28:40Z"
+  labels:
+    app: deploy-for-k8s
+  name: svc-for-k8s
+  namespace: default
+  resourceVersion: "1766"
+  uid: 086b3f7d-9b3a-410f-91f4-78a5910d80b5
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.108.17.181
+  clusterIPs:
+  - 10.108.17.181
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32445
+    port: 8080
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: deploy-for-k8s
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost
