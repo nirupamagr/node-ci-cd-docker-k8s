@@ -1,0 +1,14 @@
+{
+  "name": "node-ci-cd-docker-k8s",
+  "version": "1.0.0",
+  "description": "A simple Node.js app for CI/CD, Docker, and Kubernetes demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Nirupama",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
