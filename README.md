@@ -11,7 +11,7 @@ How to run
 
 1️⃣ Clone this project:
 ------------------------
-git clone https://github.com/<your-username>/node-ci-cd-docker-k8s.git
+clone the project
 cd node-ci-cd-docker-k8s
 
 2️⃣ Build and run with Docker:
